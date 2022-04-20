@@ -37,13 +37,20 @@ export default function Index() {
             Ok, thanks
           </Button>,
         ]}>
-        You reached one "Satellite" of{" "}
-        <a href="tobiasriemenschneider.com">tobiasriemenschneider.com</a>. This
-        specific one is used to play around with{" "}
-        <a href="https://ant.design/">Ant Design</a>, the second most popular
-        UI&nbsp;library on the planet. Feel free to go{" "}
-        <a href="tobiasriemenschneider.com/antd-sandbox">here</a> to get some
-        more info.
+        <p>
+          You reached a satellite of{" "}
+          <a href="tobiasriemenschneider.com">tobiasriemenschneider.com</a>.
+        </p>
+        <p>
+          This specific one is used to play around with{" "}
+          <a href="https://ant.design/">Ant Design</a>, the second most popular
+          UI&nbsp;library on the planet.
+        </p>
+        <p>
+          Feel free to go{" "}
+          <a href="tobiasriemenschneider.com/antd-sandbox">here</a> to get some
+          more info.
+        </p>
       </Modal>
       <Layout>
         <Styled_Content>
