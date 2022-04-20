@@ -1,4 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
+// imports - REMIX
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,12 +8,20 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+// imports - STYLES
+import stylesAntd from "./styles/antd.css";
 
+// * META
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "antd sandbox | antd.tobiasriemenschneider.com",
   viewport: "width=device-width,initial-scale=1",
 });
+
+// * LINKS
+export const links: LinksFunction = () => {
+  return [{ rel: "stylesheet", href: stylesAntd }];
+};
 
 export default function App() {
   return (
@@ -20,6 +29,7 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        {typeof document === "undefined" ? "__STYLES__" : null}
       </head>
       <body>
         <Outlet />
