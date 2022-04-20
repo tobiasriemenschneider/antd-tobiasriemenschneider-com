@@ -25,7 +25,51 @@ export default function Index() {
     setIsModalVisible(false);
   };
 
-  return null;
+  return (
+    <>
+      <Modal
+        title="What is this about?"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={hideModal}
+        footer={[
+          <Button key="ok" onClick={handleOk}>
+            Ok, thanks
+          </Button>,
+        ]}>
+        You reached one "Satellite" of{" "}
+        <a href="tobiasriemenschneider.com">tobiasriemenschneider.com</a>. This
+        specific one is used to play around with{" "}
+        <a href="https://ant.design/">Ant Design</a>, the second most popular
+        UI&nbsp;library on the planet. Feel free to go{" "}
+        <a href="tobiasriemenschneider.com/antd-sandbox">here</a> to get some
+        more info.
+      </Modal>
+      <Layout>
+        <Styled_Content>
+          <Styled_Row justify="space-around" align="middle">
+            <Styled_Col_Logo order={1} span={24} sm={{ order: 2, span: 12 }}>
+              <img src={Logo} />
+            </Styled_Col_Logo>
+            <Styled_Col_Title
+              order={2}
+              span={24}
+              sm={{ order: 1, span: 10, offset: 2 }}>
+              <Title>antd sandbox</Title>
+              <Link
+                onClick={(event) => {
+                  // event.preventDefault();
+                  showModal();
+                }}>
+                What is this about?
+              </Link>
+            </Styled_Col_Title>
+          </Styled_Row>
+        </Styled_Content>
+        <Styled_Footer>Made in DUS with my Keyboard</Styled_Footer>
+      </Layout>
+    </>
+  );
 }
 
 // * STYLING
