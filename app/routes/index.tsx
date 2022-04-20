@@ -1,13 +1,14 @@
 // imports - REACT
 import { useState } from "react";
 // imports - ANTD
-import { Layout, Row, Col, Typography, Modal, Button } from "antd";
+import { Layout, Row, Col, Typography, Modal, Button, Space } from "antd";
 const { Header, Footer, Sider, Content } = Layout;
 const { Title, Link } = Typography;
 import Logo from "~/images/antd-logo.svg";
 // imports - STYLES
 import styled from "styled-components";
 import { size } from "~/styles/breakpoints";
+import { GithubOutlined } from "@ant-design/icons";
 
 // * DEFAULT EXPORT
 export default function Index() {
@@ -73,7 +74,14 @@ export default function Index() {
             </Styled_Col_Title>
           </Styled_Row>
         </Styled_Content>
-        <Styled_Footer>Made in DUS with my Keyboard</Styled_Footer>
+        <Styled_Footer>
+          <Row justify="space-between">
+            Made in DUS with my Keyboard
+            <a href="https://github.com/tobiasriemenschneider/antd-tobiasriemenschneider-com">
+              <GithubOutlined style={{ fontSize: "20px" }} />
+            </a>
+          </Row>
+        </Styled_Footer>
       </Layout>
     </>
   );
@@ -119,9 +127,11 @@ const Styled_Col_Title = styled(Col)`
 
 const Styled_Footer = styled(Footer)`
   height: footerHeight;
-  text-align: center;
 
-  @media ${size.sm} {
-    text-align: left;
+  a {
+    color: #000000d9;
+    &:hover {
+      color: gray;
+    }
   }
 `;
